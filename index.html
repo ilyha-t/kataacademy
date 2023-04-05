@@ -9,65 +9,60 @@
     <body>
         <div class="container">
             <header class="header">
-                <div class="header__link__first">
-                    <a href="#" class="header__link"><img src="assets/images/header/burger.svg" alt="BurgerIcon" class="header__icon"></a>
-                    <a href="#" class="header__link"><img src="assets/images/header/Logotype.svg" alt="Logotype"></a>
-                    <img src="assets/images/header/divider.svg" alt="Border icon" class="header__icon">
+                <div class="header__burger-container">
+                    <button><img src="assets/images/header/burger.svg" alt="BurgerIcon" class="header__icon"></button>
+                    <button><img src="assets/images/header/Logotype.svg" alt="BurgerIcon" class="header__icon"></button>
                 </div>
-                <div class="header__link__middle" hidden>
-                    <a href="#" class="header__link"><img src="assets/images/header/call.svg" alt="CallIcon" class="header__icon"></a>
-                    <a href="#" class="header__link"><img src="assets/images/header/chat.svg" alt="ChatIcon" class="header__icon"></a>
-                    <a href="#" class="header__link"><img src="assets/images/header/profile.svg" alt="ProfileIcon" class="header__icon"></a>
-                    <img src="assets/images/header/divider.svg" alt="Border icon" class="header__icon__middle">
-                </div>
-                <div class="header__link__last">
-                    <a href="#" class="header__link">
-                        <div class="header__block__right-descr">
-                            <span class="header__description-icon" hidden>Оставить заявку</span>
-                            <img src="assets/images/header/repair.svg" alt="RepairIcon" class="header__icon">
-                        </div>
-                    </a>
-                    <a href="#" class="header__link">
-                        <div class="header__block__right-descr">
-                            <span class="header__description-icon" hidden>Статус ремонта</span>
-                            <img src="assets/images/header/checkstatus.svg" alt="CheckStatusIcon" class="header__icon">
-                        </div>
-                    </a>
-                </div>
+                <ul class="header__actions">
+                    <li hidden><button><img src="assets/images/header/call.svg" alt="CallIcon" class="header__icon"></button></li>
+                    <li hidden><button><img src="assets/images/header/chat.svg" alt="ChatIcon" class="header__icon"></button></li>
+                    <li hidden><button><img src="assets/images/header/profile.svg" alt="ProfileIcon" class="header__icon"></button></li>
+                    <li><button><img src="assets/images/header/repair.svg" alt="RepairIcon" class="header__icon"></button></li>
+                    <li><button><img src="assets/images/header/checkstatus.svg" alt="StatusIcon" class="header__icon"></button></li>
+                </ul>
             </header>
             <main class="main">
-                <div class="main__title">
-                    <img src="assets/images/main/highlight.svg" alt="DecorativeIcon">
-                    <h1>Услуги и сервисы</h1>
+                <div class="main__title-container">
+                    <h1 class="main__title">Услуги и сервисы</h1>
+                    <ul class="header__actions_hidden" hidden>
+                        <li>Оставить заявку<button><img src="assets/images/header/call.svg" alt="CallIcon" class="header__icon"></button></li>
+                        <li>Статус ремонта<button><img src="assets/images/header/chat.svg" alt="ChatIcon" class="header__icon"></button></li>
+                    </ul>
                 </div>
-                <ul class="main__list">
-                    <a href="#"><li class="main__service-link main__service-link__active">Ремонтируемые устройства</li></a>
-                    <a href="#"><li class="main__service-link">Дополнительные услуги</li></a>
-                    <a href="#"><li class="main__service-link">Цены на услуги</li></a>
-                    <a href="#"><li class="main__service-link">Адреса сервисных центров</li></a>
-                    <a href="#"><li class="main__service-link">Специальные цены</li></a>
-                    <a href="#"><li class="main__service-link">Отзывы</li></a>
-                </ul>
-                <section class="main__section-content">
-                    <div class="main__content__left">
-                        <p class="main__paragraph__active">Мы являемся авторизованным сервисным центром по ремонту техники Dell.
+                <nav class="main__navigation">
+                    <ul class="main__list">
+                        <li class="main__service-link main__service-link_active"><a href="#">Ремонтируемые устройства</a></li>
+                        <li class="main__service-link"><a href="#">Дополнительные услуги</a></li>
+                        <li class="main__service-link"><a href="#">Цены на услуги</a></li>
+                        <li class="main__service-link"><a href="#">Адреса сервисных центров</a></li>
+                        <li class="main__service-link"><a href="#">Специальные цены</a></li>
+                        <li class="main__service-link"><a href="#">Отзывы</a></li>
+                    </ul>
+                </nav>
+                <section class="main-about about">
+                    <div class="main-about__content-text">
+                        <p class="main__content-paragraph_active">Мы являемся авторизованным сервисным центром по ремонту техники Dell.
                             Только у нас вы можете отремонтировать свой ноутбук Dell с официальной
                             гарантией производителя.
                         </p>
-                        <div class="main__container__content">
-                            <p class="main__paragraph__hidden-one" hidden>Мы успешно работаем с 1992 года и заслужили репутацию надежного партнера</p>
-                            <p class="main__paragraph__hidden-two" hidden>
+                        <p class="main__content-paragraph_disabled">
+                            <span class="main__content-paragraph_hidden" hidden>
+                                Мы успешно работаем с 1992 года и заслужили репутацию надежного партнера
+                            </span>
+                            <span class="main__content-paragraph main__content-paragraph_hidden" hidden>
                                 , что подтверждает большое количество постоянных клиентов. Мы гордимся тем,
                                 что к нам обращаются по рекомендациям и, в свою очередь, советуют нас родным
                                 и близким.
-                            </p>
-                        </div>
-                        <a href="#" class="main__link__next-paragraph">
-                            <img src="assets/images/main/expand.svg" alt="NextIcon">
-                            Читать далее
-                        </a>
+                            </span>
+                        </p>
+                        <button class="main-about__show-more-btn">Читать далее</button>
                     </div>
-                    <aside class="main__content__right" />
+                    <picture class="main-about__content-image">
+                        <source srcset="./assets/images/main/main_photo_1120.jpg" type="image/jpeg" media="(min-width:1120px)">
+                        <source srcset="./assets/images/main/main_photo_768.jpg" type="image/jpeg" media="(min-width:768px)">
+                        <source srcset="./assets/images/main/main_photo_320.jpg" type="image/jpeg" media="(max-width:768px)">
+                        <img src="./assets/images/main/main_photo_1120.jpg" alt="PhotoOffice">
+                    </picture>
                 </section>
             </main>
         </div>
