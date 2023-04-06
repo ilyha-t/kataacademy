@@ -11,42 +11,42 @@
         <div class="container">
             <header class="header">
                 <ul class="header__burger-main">
-                    <li><button><img src="assets/images/header/burger.svg" alt="BurgerIcon" class="header__icon"></button></li>
-                    <li><button><img src="assets/images/header/Logotype.svg" alt="BurgerIcon" class="header__icon"></button></li>
+                    <li class="header__list-item"><button class="header__list-btn"><img src="assets/images/header/burger.svg" alt="BurgerIcon" class="header__icon"></button></li>
+                    <li class="header__list-item"><button class="header__list-btn"><img src="assets/images/header/Logotype.svg" alt="BurgerIcon" class="header__icon"></button></li>
                 </ul>
                 <ul class="header__actions">
-                    <li hidden><button><img src="assets/images/header/call.svg" alt="CallIcon" class="header__icon"></button></li>
-                    <li hidden><button><img src="assets/images/header/chat.svg" alt="ChatIcon" class="header__icon"></button></li>
-                    <li hidden><button><img src="assets/images/header/profile.svg" alt="ProfileIcon" class="header__icon"></button></li>
-                    <li><button><img src="assets/images/header/repair.svg" alt="RepairIcon" class="header__icon"></button></li>
-                    <li><button><img src="assets/images/header/checkstatus.svg" alt="StatusIcon" class="header__icon"></button></li>
+                    <li hidden class="header__list-item"><button class="header__list-btn"><img src="assets/images/header/call.svg" alt="CallIcon" class="header__icon"></button></li>
+                    <li hidden class="header__list-item"><button class="header__list-btn"><img src="assets/images/header/chat.svg" alt="ChatIcon" class="header__icon"></button></li>
+                    <li hidden class="header__list-item"><button class="header__list-btn"><img src="assets/images/header/profile.svg" alt="ProfileIcon" class="header__icon"></button></li>
+                    <li class="header__list-item"><button class="header__list-btn"><img src="assets/images/header/repair.svg" alt="RepairIcon" class="header__icon"></button></li>
+                    <li class="header__list-item"><button class="header__list-btn"><img src="assets/images/header/checkstatus.svg" alt="StatusIcon" class="header__icon"></button></li>
                 </ul>
             </header>
             <main class="main">
                 <div class="main__title-container">
                     <h1 class="main__title">Услуги и сервисы</h1>
-                    <ul class="header__actions_hidden" hidden>
-                        <li>Оставить заявку<button><img src="assets/images/header/call.svg" alt="CallIcon" class="header__icon"></button></li>
-                        <li>Статус ремонта<button><img src="assets/images/header/chat.svg" alt="ChatIcon" class="header__icon"></button></li>
+                    <ul class="main__actions-desktop" hidden>
+                        <li class="main__list-item"><button class="main__list-btn">Оставить заявку<img src="assets/images/header/call.svg" alt="CallIcon" class="main__icon"></button></li>
+                        <li class="main__list-item"><button class="main__list-btn">Статус ремонта<img src="assets/images/header/chat.svg" alt="ChatIcon" class="main__icon"></button></li>
                     </ul>
                 </div>
                 <nav class="main__navigation">
                     <ul class="main__list">
-                        <li class="main__service-link main__service-link_active"><a href="#">Ремонтируемые устройства</a></li>
-                        <li class="main__service-link"><a href="#">Дополнительные услуги</a></li>
-                        <li class="main__service-link"><a href="#">Цены на услуги</a></li>
-                        <li class="main__service-link"><a href="#">Адреса сервисных центров</a></li>
-                        <li class="main__service-link"><a href="#">Специальные цены</a></li>
-                        <li class="main__service-link"><a href="#">Отзывы</a></li>
+                        <li class="main__service-item main__service-active"><a href="#" class="main__service-link">Ремонтируемые устройства</a></li>
+                        <li class="main__service-item"><a href="#" class="main__service-link">Дополнительные услуги</a></li>
+                        <li class="main__service-item"><a href="#" class="main__service-link">Цены на услуги</a></li>
+                        <li class="main__service-item"><a href="#" class="main__service-link">Адреса сервисных центров</a></li>
+                        <li class="main__service-item"><a href="#" class="main__service-link">Специальные цены</a></li>
+                        <li class="main__service-item"><a href="#" class="main__service-link">Отзывы</a></li>
                     </ul>
                 </nav>
                 <section class="main-about about">
                     <div class="main-about__content-text">
-                        <p class="main-about__content-paragraph_active">Мы являемся авторизованным сервисным центром по ремонту техники Dell.
+                        <p class="main-about__paragraph--active">Мы являемся авторизованным сервисным центром по ремонту техники Dell.
                             Только у нас вы можете отремонтировать свой ноутбук Dell с официальной
                             гарантией производителя.
                         </p>
-                        <p class="main-about__content-paragraph_disabled">
+                        <p class="main-about__paragraph--disabled">
                             <span class="main__content-paragraph_hidden" hidden>
                                 Мы успешно работаем с 1992 года и заслужили репутацию надежного партнера
                             </span>
@@ -58,11 +58,11 @@
                         </p>
                         <button class="main-about__show-more-btn">Читать далее</button>
                     </div>
-                    <picture class="main-about__content-image">
+                    <picture class="main-about__image">
                         <source srcset="./assets/images/main/main_photo_1120.jpg" type="image/jpeg" media="(min-width:1120px)">
                         <source srcset="./assets/images/main/main_photo_768.jpg" type="image/jpeg" media="(min-width:768px)">
                         <source srcset="./assets/images/main/main_photo_320.jpg" type="image/jpeg" media="(max-width:768px)">
-                        <img src="./assets/images/main/main_photo_1120.jpg" alt="PhotoOffice">
+                        <img src="./assets/images/main/main_photo_1120.jpg" alt="PhotoOffice" class="main__about-photo">
                     </picture>
                 </section>
             </main>

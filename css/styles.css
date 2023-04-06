@@ -93,17 +93,17 @@ button {
     -ms-overflow-style: none;
 }
 
-.main__service-link {
+.main__service-item {
     padding: 8px 9px;
 }
 
-.main__service-link a {
+.main__service-link {
     color: #7E7E82;
     font-size: 16px;
     line-height: 24px;
 }
 
-.main__service-link_active {
+.main__service-active {
     border: 2px solid #B8FFEC;
     border-radius: 6px;
 }
@@ -126,11 +126,11 @@ button {
     line-height: 24px;
 }
 
-.main-about__content-image {
+.main-about__image {
     width: 100%;
 }
 
-.main-about__content-paragraph_active,
+.main-about__paragraph--active,
 .main-about__content-text {
     font-size: 14px;
 }
@@ -139,7 +139,7 @@ button {
     padding-top: 15px;
 }
 
-.main-about__content-image {
+.main-about__image {
     margin-top: 20px;
 }
 
@@ -149,11 +149,11 @@ button {
     gap: 10px;
 }
 
-.main-about__content-paragraph_disabled {
+.main-about__paragraph--disabled {
     margin-top: 20px;
 }
 
-.main-about__content-image img {
+.main__about-photo {
     margin-top: 20px;
     width: 100vw;
     height: auto;
@@ -166,12 +166,12 @@ button {
         display: block;
     }
 
-    .header__actions li:nth-child(3){
+    .main__actions-desktop li:nth-child(3){
         display: flex;
         align-items: center;
     }
 
-    .header__actions li:nth-child(3)::after{
+    .main__actions-desktop li:nth-child(3)::after{
         content: url("../assets/images/header/divider.svg");
         padding-left: 16px;
     }
@@ -185,11 +185,11 @@ button {
         display: inline;
     }
 
-    .main-about__content-image {
+    .main-about__image {
         margin: 0;
     }
 
-    .main-about__content-image img {
+    .main__about-photo {
         margin: 0;
         border-radius: 10px;
         width: 100%;
@@ -208,7 +208,7 @@ button {
         display: none;
     }
 
-    .header__actions_hidden {
+    .main__actions-desktop {
         display: flex;
         align-items: center;
         gap: 10px;
@@ -224,7 +224,13 @@ button {
         flex-wrap: wrap;
     }
 
-    .header__actions_hidden li:nth-child(1) {
+    .main__list-btn {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .main__actions-desktop li:nth-child(1) {
         margin-right: 20px;
     }
 
