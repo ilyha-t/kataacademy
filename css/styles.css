@@ -49,6 +49,17 @@ button {
     gap: 16px;
 }
 
+.header__burger-main li:nth-child(2) {
+    display: flex;
+    align-items: center;
+}
+
+.header__burger-main li:nth-child(2)::before {
+    content: url("../assets/images/header/divider.svg");
+    padding-right: 16px;
+}
+
+
 .header__burger-container button:nth-child(2) {
     content: url("../assets/images/main/main_photo_320.jpg");
 }
@@ -156,9 +167,13 @@ button {
     }
 
     .header__actions li:nth-child(3){
-        padding-right: 42px;
-        border-right: 2px solid #EAEAEA;
-        border-radius: 1px;
+        display: flex;
+        align-items: center;
+    }
+
+    .header__actions li:nth-child(3)::after{
+        content: url("../assets/images/header/divider.svg");
+        padding-left: 16px;
     }
 
     .about {
@@ -203,7 +218,6 @@ button {
         display: flex;
         justify-content: space-between;
     }
-
 
 
     .main__list {
