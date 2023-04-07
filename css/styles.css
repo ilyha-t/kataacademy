@@ -169,7 +169,7 @@ button {
 
 button:focus {
     outline: none; /* убрать стандартный фокус-квадрат */
-    box-shadow: 0 0 0 3px rgba(255, 255, 0, 0.5);
+    box-shadow: 0 0 10px 3px #ff3e79;
 }
 
 @media (min-width: 768px) {
