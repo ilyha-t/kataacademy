@@ -167,12 +167,42 @@ button {
     cursor: pointer;
 }
 
-button:focus {
+
+
+.header__list-btn:nth-child(2):focus {
+    border: none;
+}
+
+
+.header__list-btn:focus,
+.main__list-btn:focus,
+.main-about__show-more-btn:focus,
+.main__service-link:focus {
     outline: none; /* убрать стандартный фокус-квадрат */
     box-shadow: 0 0 10px 3px #ff3e79;
 }
 
+.header__list-btn:not(.header__logo) {
+    border-radius: 50%; /* делаем кнопку круглой */
+    width: 40px; /* задаем ширину кнопки */
+    height: 40px; /* задаем высоту кнопки */
+    display: flex; /* задаем стиль блочного элемента для кнопки */
+    justify-content: center; /* выравниваем по горизонтали содержимое кнопки */
+    align-items: center; /* выравниваем по вертикали содержимое кнопки */
+}
+
+.header__logo {
+    border-radius: 10px;
+}
+
+
 @media (min-width: 768px) {
+    .main__list-btn {
+        display: flex; /* задаем стиль блочного элемента для кнопки */
+        justify-content: center; /* выравниваем по горизонтали содержимое кнопки */
+        align-items: center; /* выравниваем по вертикали содержимое кнопки */
+    }
+
     .header__actions li {
         display: block;
     }
@@ -182,7 +212,12 @@ button:focus {
         align-items: center;
     }
 
-    .main__actions-desktop li:nth-child(3)::after{
+    .header__list-item:nth-child(3){
+        display: flex;
+        align-items: center;
+    }
+
+    .header__list-item:nth-child(3)::after{
         content: url("../assets/images/header/divider.svg");
         padding-left: 16px;
     }
