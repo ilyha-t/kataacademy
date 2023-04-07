@@ -135,7 +135,7 @@ button {
     font-size: 14px;
 }
 
-.main__content-paragraph_hidden {
+.main__content-paragraph--hidden {
     padding-top: 15px;
 }
 
@@ -161,6 +161,17 @@ button {
     left: 0;
 }
 
+.header__list-item:hover,
+.main__list-item:hover,
+.main__service-item:hover {
+    cursor: pointer;
+}
+
+button:focus {
+    outline: none; /* убрать стандартный фокус-квадрат */
+    box-shadow: 0 0 0 3px rgba(255, 255, 0, 0.5);
+}
+
 @media (min-width: 768px) {
     .header__actions li {
         display: block;
@@ -181,7 +192,7 @@ button {
         gap: 30px;
     }
 
-    .main__content-paragraph_hidden:nth-child(1) {
+    .main__content-paragraph--hidden:nth-child(1) {
         display: inline;
     }
 
@@ -234,7 +245,7 @@ button {
         margin-right: 20px;
     }
 
-    .main__content-paragraph_hidden:nth-child(2) {
+    .main__content-paragraph--hidden:nth-child(2) {
         display: inline;
     }
 }
