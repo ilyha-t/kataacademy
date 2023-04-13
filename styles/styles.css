@@ -40,115 +40,135 @@ button {
     outline: none;
 }
 
-.container {
+label {
+    cursor: pointer;
+}
+
+.burger {
     width: 320px;
     height: 100vh;
     box-shadow: 0 0 40px 1px #000;
 }
 
-.header__actions {
-    padding: 24px;
+.burger__container {
+    padding: 16px 24px 0 24px;
+}
+
+.burger__header-actions {
     max-height: 100px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.header__action-btn:hover:not(.header__logotype),
-.main__communication-btn:hover,
-.header__action-btn:focus:not(.header__logotype),
-.main__communication-btn:focus{
+.burger__header-action-btn:hover:not(.header__logotype),
+.burger__communication-btn:hover,
+.burger__header-action-btn:focus:not(.header__logotype),
+.burger__communication-btn:focus{
     box-shadow: 0 0 5px 1px #ff3e79;
     border-radius: 50%;
     width: 40px;
     height: 40px;
 }
 
-.header__btn-icon:hover,
-.main__btn-icon:hover,
-.header__action-btn:focus .header__btn-icon,
+.burger__btn-icon:hover,
+.header__action-btn:focus .burger__btn-icon,
 .main__communication-btn:focus .main__btn-icon{
     animation-name: changeOpacity;
     animation-duration: 1s;
     animation-fill-mode: forwards;
 }
 
-.header__action-item:nth-child(2) {
+.burger__header-action-item:nth-child(2) {
     margin-left: -40px;
 }
 
-.main__position {
+.burger__main-height {
     height: calc(100vh - 100px);
 }
 
-.main__bottom-container {
-    padding: 24px;
+.burger__list {
+    margin-top: 16px;
 }
 
-.main {
+
+.burger__main {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
-.main__link--active::before {
+.burger__main-link:hover::before,
+.burger__main-link:focus::before {
     content: url("../assets/images/HighlightIcon.svg");
     position: absolute;
     left: 0;
 }
 
-.main__link--active {
+.burger__main-link {
     display: flex;
     align-items: center;
-}
-
-.main__link {
-    display: block;
-    padding: 16px 24px;
+    padding: 16px 0 16px 0;
     transition: all 2s ease-out;
 }
 
-.main__communication {
-    padding-bottom: 40px;
+.burger__main-link:not(.burger__main-link::before) {
+    text-indent: 10px;
 }
 
-.main__link:hover,
-.main__link:focus {
+
+.burger__main-link:hover,
+.burger__main-link:focus,
+.burger__main-link:active{
     background-image: linear-gradient(to right, #ff3e79, #33ccff);
+    background-size: 200% auto;
     animation-name: gradient;
-    animation-duration: 2s;
+    animation-duration: 1s;
     animation-timing-function: ease-out;
     animation-fill-mode: forwards;
     border-radius: 5px;
 
 }
 
-.main__communication-methods {
+.burger__bottom-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.burger__communication-methods {
     display: flex;
     gap: 16px;
 }
 
-.main__contacts a{
+.burger__main-contacts a{
     display: block;
 }
 
-.main__contacts{
+.burger__main-contacts{
     padding-top: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 }
 
-.main__phone {
-    padding-top: 12px;
+.burger__phone {
     font-weight: 600;
     font-size: 24px;
 }
 
-.main__lang-item {
-    display: inline;
+.burger__languages input {
+    position: absolute;
+    visibility: hidden;
+
 }
 
-.main__lang--active,
-.main__link--active{
+input[type="radio"]:checked + label {
     color: #7E7E82;
+}
+
+input[type="radio"]:hover + label:not(input[type="radio"]:checked + label) {
+    text-shadow: 1px 1px 1px #000;
 }
 
 @keyframes changeOpacity {
@@ -163,15 +183,15 @@ button {
 
 @keyframes gradient {
     0% {
-        background-position: 0% 50%;
+        background-position: 0 0;
         color: #86868a;
     }
     50% {
-        background-position: 100% 50%;
+        background-position: 10% 0;
         color: #000;
     }
     100% {
-        background-position: 0% 50%;
+        background-position: 25% 0;
         color: #000;
     }
 }
