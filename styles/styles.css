@@ -73,7 +73,7 @@ label {
 
 .burger__btn-icon:hover,
 .header__action-btn:focus .burger__btn-icon,
-.main__communication-btn:focus .main__btn-icon{
+button:focus .burger__btn-icon{
     animation-name: changeOpacity;
     animation-duration: 1s;
     animation-fill-mode: forwards;
