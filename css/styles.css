@@ -26,9 +26,11 @@
 .brands__list {
     list-style: none;
     display: grid;
-    grid-template-columns: repeat(3, 240px);
     column-gap: 40px;
     row-gap: 16px;
+    height: 160px;
+    overflow: hidden;
+    transition: height 2s ease;
 }
 
 .brands__item {
@@ -49,20 +51,55 @@
 .brands__btn {
     border-radius: 50%;
     border: transparent;
+    background: none;
     display: flex;
 }
 
-.brands__link::before {
+.brands__btn:hover,
+.brands__btn:focus {
+    cursor: pointer;
+    box-shadow: 0 0 10px 0 #ff3e79;
+    outline: none;
+}
+
+.brands__show-wrapper::before {
     content: url("../assets/svg/devider.svg");
     padding-right: 10px;
 }
 
-.brands__link {
-    margin-top-top: 16px;
+.brands__show-wrapper {
+    padding: 10px 10px 10px 0;
+    display: inline-block;
+    margin-top: 16px;
     color: #1B1C21;
     font-weight: 500;
     font-size: 16px;
     line-height: 24px;
     letter-spacing: -0.2px;
     text-decoration: none;
+}
+
+.brands__show-wrapper:focus,
+.brands__show-wrapper:hover {
+    text-shadow: 0 0 1px #1B1C21;
+}
+
+@media (min-width: 768px) {
+    .brands__list {
+        grid-template-columns: repeat(3, 240px);
+    }
+
+    .brands__list-active {
+        height: 336px;
+    }
+}
+
+@media (min-width: 1120px) {
+    .brands__list {
+        grid-template-columns: repeat(4, 240px);
+    }
+
+    .brands__list-active {
+        height: 250px;
+    }
 }
