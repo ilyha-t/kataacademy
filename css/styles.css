@@ -23,15 +23,7 @@
     padding: 16px 0 16px 0;
 }
 
-.brands__list {
-    list-style: none;
-    display: grid;
-    column-gap: 40px;
-    row-gap: 16px;
-    height: 160px;
-    overflow: hidden;
-    transition: height 2s ease;
-}
+
 
 .brands__item {
     display: flex;
@@ -64,7 +56,15 @@
 
 .brands__show-wrapper::before {
     content: url("../assets/svg/devider.svg");
-    padding-right: 10px;
+    padding: 0 10px 0 0;
+    transform: rotate(0deg);
+    transition: transform 1s ease-out;
+}
+
+.brands__show-wrapper.brands__show-wrapper-active::before {
+    display: inline-block;
+    padding: 0 0 0 10px;
+    transform: rotate(180deg);
 }
 
 .brands__show-wrapper {
@@ -84,9 +84,37 @@
     text-shadow: 0 0 1px #1B1C21;
 }
 
+.swiper-pagination-bullet-active {
+    background-color: #B5B6BC !important;
+}
+
+
+@media (max-width: 768px) {
+    .brands__title {
+        padding: 16px;
+    }
+
+    #mobile-swiper {
+        width: 80%;
+        max-width: 300px;
+        height: 100px;
+    }
+
+    .brands__item.swiper-slide {
+        display: flex;
+    }
+}
+
 @media (min-width: 768px) {
     .brands__list {
-        grid-template-columns: repeat(3, 240px);
+        list-style: none;
+        display: grid;
+        column-gap: 40px;
+        row-gap: 16px;
+        height: 160px;
+        overflow: hidden;
+        transition: height 2s ease;
+        grid-template-columns: repeat(3, 220px);
     }
 
     .brands__list-active {
