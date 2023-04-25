@@ -10,6 +10,7 @@
     font-family: "TT Likes";
 }
 
+
 .container {
     display: flex;
     justify-content: center;
@@ -41,24 +42,26 @@
 }
 
 .brands__btn {
-    border-radius: 50%;
+    width: 100%;
     border: transparent;
     background: none;
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
 }
 
-.brands__btn:hover,
 .brands__btn:focus {
-    cursor: pointer;
     box-shadow: 0 0 10px 0 #ff3e79;
     outline: none;
+    border-radius: 15%;
 }
 
 .brands__show-wrapper::before {
     content: url("../assets/svg/devider.svg");
     padding: 0 10px 0 0;
     transform: rotate(0deg);
-    transition: transform 1s ease-out;
+    transition: transform 0.5s ease;
 }
 
 .brands__show-wrapper.brands__show-wrapper-active::before {
@@ -69,7 +72,6 @@
 
 .brands__show-wrapper {
     padding: 10px 10px 10px 0;
-    display: inline-block;
     margin-top: 16px;
     color: #1B1C21;
     font-weight: 500;
@@ -77,6 +79,13 @@
     line-height: 24px;
     letter-spacing: -0.2px;
     text-decoration: none;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+}
+
+.brands__show-wrapper--hidden {
+    display: none;
 }
 
 .brands__show-wrapper:focus,
@@ -91,16 +100,18 @@
 
 @media (max-width: 768px) {
     .brands__title {
-        padding: 16px;
+        margin: 0 auto;
+        text-align: center;
+        min-width: 240px;
     }
 
-    #mobile-swiper {
+    .mobile-swiper {
         width: 80%;
         max-width: 300px;
         height: 100px;
     }
 
-    .brands__item.swiper-slide {
+    .swiper-slide {
         display: flex;
     }
 }
@@ -113,12 +124,16 @@
         row-gap: 16px;
         height: 160px;
         overflow: hidden;
-        transition: height 2s ease;
+        transition: height 0.7s ease;
         grid-template-columns: repeat(3, 220px);
     }
 
     .brands__list-active {
         height: 336px;
+    }
+
+    .brands__item {
+        max-width: 220px;
     }
 }
 
@@ -129,5 +144,9 @@
 
     .brands__list-active {
         height: 250px;
+    }
+
+    .brands__item {
+        max-width: 240px;
     }
 }
