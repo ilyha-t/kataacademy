@@ -66,6 +66,10 @@ button {
     content: url("../assets/images/main/main_photo_320.jpg");
 }
 
+.container-disable {
+    overflow: hidden;
+}
+
 .header {
     padding: 19px 16px;
     border-bottom: 1px solid #D9FFF5;
@@ -524,6 +528,11 @@ button {
     .container-brands {
         justify-content: start;
     }
+
+    .repair__list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
 @media (min-width: 1120px) {
@@ -576,5 +585,226 @@ button {
 
     .brands__item {
         max-width: 240px;
+    }
+}
+
+/*menu*/
+aside {
+    display: none;
+    font-family: "TT Lakes Medium", "sans-serif";
+    font-size: 16px;
+    font-weight: 500;
+    background-color: #fff;
+}
+
+ul {
+    list-style-type: none;
+}
+a {
+    color: #1B1C21;
+    text-decoration: none;
+    outline: none;
+    transition: color 300ms ease-out;
+}
+
+a:hover,
+a:focus {
+    color: #7E7E82;
+}
+
+button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
+
+label {
+    cursor: pointer;
+}
+
+.burger {
+    position: absolute;
+    top: 0;
+    z-index: 6;
+    width: 320px;
+    height: 100vh;
+    box-shadow: 0 0 40px 1px #000;
+}
+
+.burger-show {
+    display: block;
+    animation-name: openMenu;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+
+.burger__container {
+    position: relative;
+    z-index: 5;
+    padding: 19px 16px 0 16px;
+}
+
+.blur {
+    position: absolute;
+    left: 320px;
+    top: 0;
+    z-index: 3;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0, 0.5);
+}
+
+.burger__header-actions {
+    max-height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.burger__header-action-btn:hover:not(.header__logotype),
+.burger__communication-btn:hover,
+.burger__header-action-btn:focus:not(.header__logotype),
+.burger__communication-btn:focus{
+    box-shadow: 0 0 5px 1px #ff3e79;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}
+
+.burger__btn-icon:hover,
+.header__action-btn:focus .burger__btn-icon,
+button:focus .burger__btn-icon{
+    animation-name: changeOpacity;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+.burger__header-action-item:nth-child(2) {
+    margin-left: -40px;
+}
+
+.burger__main-height {
+    height: calc(100vh - 100px);
+}
+
+.burger__list {
+    margin-top: 16px;
+}
+
+
+.burger__main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.burger__main-link:hover::before,
+.burger__main-link:focus::before {
+    content: url("../assets/images/menu/HighlightIcon.svg");
+    position: absolute;
+    left: 0;
+}
+
+.burger__main-link {
+    display: flex;
+    align-items: center;
+    padding: 16px 0 16px 0;
+    transition: all 2s ease-out;
+}
+
+.burger__main-link:not(.burger__main-link::before) {
+    text-indent: 10px;
+}
+
+
+.burger__main-link:hover,
+.burger__main-link:focus,
+.burger__main-link:active{
+    background-image: linear-gradient(to right, #ff3e79, #33ccff);
+    background-size: 200% auto;
+    animation-name: gradient;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    border-radius: 5px;
+
+}
+
+.burger__bottom-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.burger__communication-methods {
+    display: flex;
+    gap: 16px;
+}
+
+.burger__main-contacts a{
+    display: block;
+}
+
+.burger__main-contacts{
+    padding-top: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.burger__phone {
+    font-weight: 600;
+    font-size: 24px;
+}
+
+.burger__languages input {
+    position: absolute;
+    visibility: hidden;
+
+}
+
+input[type="radio"]:checked + label {
+    color: #7E7E82;
+}
+
+input[type="radio"]:hover + label:not(input[type="radio"]:checked + label) {
+    text-shadow: 1px 1px 1px #000;
+}
+
+@keyframes changeOpacity {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0.5;
+    }
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0 0;
+        color: #86868a;
+    }
+    50% {
+        background-position: 10% 0;
+        color: #000;
+    }
+    100% {
+        background-position: 25% 0;
+        color: #000;
+    }
+}
+
+@keyframes openMenu {
+    from {
+        display: none;
+        left: -320px;
+    }
+
+    to {
+        left: 0px;
     }
 }
