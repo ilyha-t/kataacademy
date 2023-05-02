@@ -177,16 +177,16 @@
                     <ul class="services__list">
                         <li class="services__item">
                             <div class="services__service-content">
-                                <span class="services__service-name">Ремонтные услуги</span>
+                                <span class="services__service-name table-services">Ремонтные услуги</span>
                                 <p class="services__service-descr">Диагностика</p>
                             </div>
                             <div class="services__service-price">
-                                <span class="services__service-name">Цена</span>
+                                <span class="services__service-name table-services">Цена</span>
                                 <p class="services__service-descr">Бесплатно</p>
                             </div>
                             <div class="services__service-long">
                                 <div>
-                                    <span class="services__service-name">Срок</span>
+                                    <span class="services__service-name table-services">Срок</span>
                                     <p class="services__service-descr">30мин</p>
                                 </div>
                                 <button class="services__button">
@@ -332,7 +332,7 @@
                     <div class="burger__communication">
                         <ul class="burger__communication-methods">
                             <li class="burger__communication-item">
-                                <button class="burger__communication-btn"><img src="assets/images/menu/PhoneIcon.svg" alt="PhoneIcon" class="burger__btn-icon"></button>
+                                <button class="burger__communication-btn"><img src="assets/images/menu/PhoneIcon.svg" alt="PhoneIcon" class="burger__btn-icon phone-icon"></button>
                             </li>
                             <li class="burger__communication-item">
                                 <button class="burger__communication-btn"><img src="assets/images/menu/ChatIcon.svg" alt="ChatIcon" class="burger__btn-icon"></button>
@@ -360,8 +360,43 @@
             </div>
         </div>
     </div>
-    <div class="blur"></div>
+    <div class="blur blur-menu"></div>
 </aside>
+<div class="phone-task call">
+    <button class="phone-task__close">
+        <img src="assets/images/menu/CloseBurgerIcon.svg" alt="CloseIcon" class="phone-task__close-img">
+    </button>
+    <form class="phone-task__form">
+        <h3 class="phone-task__order-label">Заказать звонок</h3>
+        <input type="text" placeholder="Телефон" class="phone-task__order-input">
+        <p class="phone-task__order-descr">Нажимая "отправить", вы даете согласие на
+            <a class="phone-task__documents-link" href="#">обработку персональных данных</a> и соглашаетесь с нашей <a class="phone-task__documents-link" href="#" >политикой конфиденциальности</a></p>
+        <button class="phone-task__send-btn">
+            Отправить
+            <img src="assets/images/svg/dropdown.svg" alt="SendIcon" class="phone-task__send-img">
+        </button>
+    </form>
+    <div class="blur blur-phone"></div>
+</div>
+<div class="phone-task feedback">
+    <button class="phone-task__close">
+        <img src="assets/images/menu/CloseBurgerIcon.svg" alt="CloseIcon" class="phone-task__close-img">
+    </button>
+    <form class="phone-task__form">
+        <h3 class="phone-task__order-label">Обратная связь</h3>
+        <input type="text" placeholder="Имя" class="phone-task__order-input">
+        <input type="text" placeholder="Телефон" class="phone-task__order-input">
+        <input type="text" placeholder="Электронная почта" class="phone-task__order-input">
+        <textarea class="phone-task__message" placeholder="Сообщение"></textarea>
+        <p class="phone-task__order-descr">Нажимая "отправить", вы даете согласие на
+            <a class="phone-task__documents-link" href="#">обработку персональных данных</a> и соглашаетесь с нашей <a class="phone-task__documents-link" href="#" >политикой конфиденциальности</a></p>
+        <button class="phone-task__send-btn">
+            Отправить
+            <img src="assets/images/svg/dropdown.svg" alt="SendIcon" class="phone-task__send-img">
+        </button>
+    </form>
+    <div class="blur blur-phone"></div>
+</div>
 <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 <script src="scripts/script.js"></script>
 <script src="scripts/menu.js"></script>
