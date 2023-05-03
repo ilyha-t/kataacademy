@@ -1,5 +1,5 @@
 class Slider {
-    constructor(wrapperClass, sliderClass, showWrapper = null) {
+    constructor(wrapperClass, sliderClass, showWrapper = null, activeClass= null) {
         this.wrapper = document.querySelector(wrapperClass);
         this.slider = this.wrapper.querySelector(sliderClass);
         this.slides = this.slider.children;
@@ -7,6 +7,7 @@ class Slider {
         this.pagination.classList.add('swiper-pagination');
         this.wrapper.appendChild(this.pagination);
         this.showWrapper = document.querySelector(showWrapper);
+        this.activeClass = activeClass;
         this.init();
     }
 
@@ -61,18 +62,18 @@ class Slider {
     }
 
     changeSizeContainer() {
-        if (this.slider.classList.contains('brands__list-active')) {
+        if (this.slider.classList.contains(this.activeClass)) {
             this.showWrapper.textContent = 'Показать все';
-            this.slider.classList.remove('brands__list-active');
+            this.slider.classList.remove(this.activeClass);
             this.showWrapper.classList.remove('brands__show-wrapper-active');
         } else {
             this.showWrapper.textContent = 'Скрыть';
-            this.slider.classList.add('brands__list-active');
+            this.slider.classList.add(this.activeClass);
             this.showWrapper.classList.add('brands__show-wrapper-active');
         };
     }
 }
 
-const firstWrapper = new Slider('.brands__swiper', '.brands__list', '.brands__show-wrapper');
-const doubleWrapper = new Slider('.repair__swiper', '.repair__list', '.repair__show-wrapper');
+const firstWrapper = new Slider('.brands__swiper', '.brands__list', '.brands__show-wrapper', 'brands__list-active');
+const doubleWrapper = new Slider('.repair__swiper', '.repair__list', '.repair__show-wrapper', 'repair__list-active');
 const thirdWrapper = new Slider('.services__swiper', '.services__list')

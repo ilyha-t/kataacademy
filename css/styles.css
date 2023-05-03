@@ -253,7 +253,8 @@ button {
     padding: 16px;
 }
 
-.brands__show-wrapper::before {
+.brands__show-wrapper::before,
+.repair__show-wrapper::before {
     content: url("../assets/images/svg/devider.svg");
     padding: 0 10px 0 0;
     transform: rotate(0deg);
@@ -266,7 +267,8 @@ button {
     transform: rotate(180deg);
 }
 
-.brands__show-wrapper {
+.brands__show-wrapper,
+.repair__show-wrapper {
     padding: 10px 10px 10px 0;
     margin-top: 16px;
     color: #1B1C21;
@@ -285,7 +287,9 @@ button {
 }
 
 .brands__show-wrapper:focus,
-.brands__show-wrapper:hover {
+.brands__show-wrapper:hover,
+.repair__show-wrapper:focus,
+.repair__show-wrapper:hover {
     text-shadow: 0 0 1px #1B1C21;
 }
 
@@ -509,7 +513,6 @@ button {
     .brands__list {
         list-style: none;
         display: grid;
-        column-gap: 40px;
         row-gap: 16px;
         height: 160px;
         overflow: hidden;
@@ -532,6 +535,14 @@ button {
     .repair__list {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
+        grid-row-gap: 20px;
+        height: 160px;
+        overflow: hidden;
+        transition: height 0.7s ease;
+    }
+
+    .repair__list-active {
+        height: 340px;
     }
 
     .services__list {
@@ -551,10 +562,19 @@ button {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         align-items: center;
+        grid-column-gap: 50px;
     }
 
     .services__service-descr {
         display: table-row;
+    }
+
+    .main__description {
+        width: 425px;
+    }
+
+    .main__get-offer {
+        white-space: nowrap;
     }
 }
 
