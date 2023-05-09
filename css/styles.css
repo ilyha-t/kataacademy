@@ -139,8 +139,10 @@ button {
 
 .main-about__image {
     display: block;
-    width: 100%;
+    width: 100vw;
     height: auto;
+    position: relative;
+    left: -16px;
 }
 
 .main-about__paragraph--active,
@@ -165,10 +167,8 @@ button {
 
 .main__about-photo {
     margin-top: 20px;
-    width: 100vw;
+    width: 100%;
     height: auto;
-    position: relative;
-    left: -16px;
 }
 
 .header__list-item:hover,
@@ -208,22 +208,28 @@ button {
 .container-brands {
     display: flex;
     justify-content: center;
+    margin-top: 16px;
 }
 
 .brands__title,
 .repair__title,
 .services__title {
-    width: 100%;
+    width: 100vw;
     font-weight: 500;
     color: #7E7E82;
     text-transform: uppercase;
     font-size: 16px;
     line-height: 24px;
-    padding: 16px 0 16px 0;
+    padding: 16px 0 16px 16px;
     background-color: #fff;
+    border-top: 1px solid #D9FFF5;;
 }
 
-
+.repair__title,
+.services__title {
+    position: relative;
+    left: -16px;
+}
 
 .brands__item {
     display: flex;
@@ -260,6 +266,12 @@ button {
 }
 
 .brands__show-wrapper.brands__show-wrapper-active::before {
+    display: inline-block;
+    padding: 0 0 0 10px;
+    transform: rotate(180deg);
+}
+
+.repair__show-wrapper.repair__show-wrapper-active::before {
     display: inline-block;
     padding: 0 0 0 10px;
     transform: rotate(180deg);
@@ -305,7 +317,7 @@ button {
 }
 
 .repair__btn {
-    width: 240px;
+    min-width: 240px;
     height: 160px;
     display: flex;
     flex-direction: column;
@@ -357,7 +369,6 @@ button {
     font-weight: 600;
     text-transform: uppercase;
     padding: 4px;
-    margin-left: auto;
 }
 
 .services__button-img {
@@ -402,305 +413,31 @@ button {
     padding: 16px 10px 16px 10px;
 }
 
-@media (max-width: 768px) {
-    .brands {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .brands__swiper,
-    .repair__swiper {
-        height: 140px;
-        width: 100%;
-    }
-
-    .brands__list {
-        width: 240px !important;
-        height: 72px;
-        padding: 16px;
-
-    }
-
-    .brands__title {
-        min-width: 288px;
-    }
-
-    .repair__list {
-        margin-top: 16px;
-    }
-
-    .repair__swiper {
-        height: 228px;
-    }
-
-    .services__swiper {
-        width: 100%;
-        height: 250px;
-    }
-
-    .services__list {
-        padding-top: 16px;
-    }
-
-
-    .services__item {
-        width: 260px !important;
-        height: 200px !important;
-        display: flex !important;
-        flex-direction: column;
-        gap: 16px;
-        border-radius: 6px;
-        padding: 16px;
-        border: 1px solid #000;
-    }
-
-     .services__item {
-         position: relative;
-     }
-
-     .services__button {
-         position: absolute;
-         bottom: 10px;
-         right: 10px;
-     }
-
+.brands__blur-swiper,
+.repair__blur-swiper,
+.services__blur-swiper {
+    position: absolute;
+    right: -16px;
+    top: 14px;
+    z-index: 10;
+    width: 50px;
+    background: linear-gradient(270deg, #F8F8F8 16.84%, rgba(248, 248, 248, 0.05) 100%);
 }
 
-
-@media (min-width: 768px) {
-    .main__list-btn {
-        display: flex; /* задаем стиль блочного элемента для кнопки */
-        justify-content: center; /* выравниваем по горизонтали содержимое кнопки */
-        align-items: center; /* выравниваем по вертикали содержимое кнопки */
-    }
-
-    .header__actions li {
-        display: block;
-    }
-
-    .main__actions-desktop li:nth-child(3){
-        display: flex;
-        align-items: center;
-    }
-
-    .header__list-item:nth-child(3){
-        display: flex;
-        align-items: center;
-    }
-
-    .header__list-item:nth-child(3)::after{
-        content: url("../assets/images/header/divider.svg");
-        padding-left: 16px;
-    }
-
-    .about {
-        display: flex;
-        gap: 30px;
-    }
-
-    .main__content-paragraph--hidden:nth-child(1) {
-        display: inline;
-    }
-
-    .main-about__image {
-        margin: 0;
-    }
-
-    .main__about-photo {
-        margin: 0;
-        border-radius: 10px;
-        width: 100%;
-        height: auto;
-        position: static;
-    }
-
-    .brands {
-        width: 100%;
-    }
-
-    .brands__list {
-        list-style: none;
-        display: grid;
-        row-gap: 16px;
-        height: 160px;
-        overflow: hidden;
-        transition: height 0.7s ease;
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    .brands__list-active {
-        height: 336px;
-    }
-
-    .brands__item {
-        max-width: 220px;
-    }
-
-    .container-brands {
-        justify-content: start;
-    }
-
-    .repair__list {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-row-gap: 20px;
-        height: 160px;
-        overflow: hidden;
-        transition: height 0.7s ease;
-    }
-
-    .repair__list-active {
-        height: 340px;
-    }
-
-    .services__list {
-        width: 100%;
-        background: #fff;
-        border-radius: 6px;
-    }
-
-    .services__service-name {
-        display: none;
-    }
-
-    .table-services {
-        display: block;
-    }
-
-    .services__item {
-        padding: 23px 16px;
-        display: flex;
-        align-items: center;
-    }
-
-    .services__item:not(:last-child) {
-        border-bottom: 2px solid #EAEAEA;
-    }
-
-    .services__service-descr {
-        white-space: nowrap;
-    }
-
-
-    .services__service-content {
-        min-width: 355px;
-    }
-
-    .services__service-price {
-        min-width: 100px;
-        margin-left: 30px;
-    }
-
-    .services__service-name {
-        position: relative;
-        top: -10px;
-    }
-
-    .main__description {
-        width: 425px;
-        margin-top: 24px;
-    }
-
-    .main__get-offer {
-        white-space: nowrap;
-    }
-
-    .phone-task__order-label::before {
-        position: relative !important;
-        left: -16px !important;
-    }
-
-    .phone-task__form {
-        position: relative;
-        top: -84px;
-    }
-
-    .phone-task__close {
-        position: relative;
-        left: -80px;
-        top: 3px;
-        z-index: 5;
-    }
-
-    .footer {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-    }
-
-    .footer__info,
-    .footer__main-descr,
-    .footer__policy {
-        width: 215px;
-    }
-
-    .footer__info {
-        text-align: right;
-    }
-
-    .footer__main-descr {
-        text-align: left;
-    }
+.brands__blur-swiper {
+    height: 76px;
 }
 
-@media (min-width: 1120px) {
-    body {
-        display: flex;
-        justify-content: center;
-    }
+.repair__blur-swiper {
+    height: 242px;
+}
 
-    .header {
-        display: none;
-    }
+.services__blur-swiper {
+    height: 262px;
+}
 
-    .main__actions-desktop {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-    }
-
-    .main__title-container {
-        display: flex;
-        justify-content: space-between;
-    }
-
-
-    .main__list {
-        flex-wrap: wrap;
-    }
-
-    .main__list-btn {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-    }
-
-    .main__actions-desktop li:nth-child(1) {
-        margin-right: 20px;
-    }
-
-    .main__content-paragraph--hidden:nth-child(2) {
-        display: inline;
-    }
-
-    .brands__list {
-        grid-template-columns: repeat(4, 240px);
-        justify-content: space-between;
-    }
-
-    .repair__list {
-        grid-template-columns: repeat(4, 240px);
-        justify-content: space-between;
-    }
-
-    .brands__list-active {
-        height: 250px;
-    }
-
-    .brands__item {
-        max-width: 240px;
-    }
+.brands__list li:last-child .blur__swiper {
+    display: none;
 }
 
 /*menu*/
@@ -712,9 +449,6 @@ aside {
     background-color: #fff;
 }
 
-ul {
-    list-style-type: none;
-}
 a {
     color: #1B1C21;
     text-decoration: none;
@@ -802,10 +536,6 @@ button:focus .burger__btn-icon{
     animation-name: changeOpacity;
     animation-duration: 1s;
     animation-fill-mode: forwards;
-}
-
-.burger__header-action-item:nth-child(2) {
-    margin-left: -40px;
 }
 
 .burger__main-height {
@@ -897,7 +627,7 @@ input[type="radio"]:hover + label:not(input[type="radio"]:checked + label) {
 }
 
 .phone-task {
-    position: absolute;
+    position: fixed;
     z-index: 10;
     top: 0;
     right: -320px;
@@ -1065,4 +795,399 @@ input[type="radio"]:hover + label:not(input[type="radio"]:checked + label) {
     to {
         right: -320px;
     }
+}
+
+@media (max-width: 767px) {
+    .brands {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .brands__swiper,
+    .repair__swiper {
+        height: 140px;
+        width: 100%;
+        position: relative;
+    }
+
+    .brands__list,
+    .repair__list {
+        width: 80% !important;
+        height: 72px;
+        padding-top: 16px;
+    }
+
+    .brands__title,
+    .repair__title {
+        min-width: 288px;
+    }
+
+    .repair__list {
+        margin-top: 16px;
+    }
+
+    .repair__swiper {
+        height: 228px;
+    }
+
+    .services__swiper {
+        width: 100%;
+        height: 250px;
+    }
+
+    .services__list {
+        padding-top: 16px;
+    }
+
+
+    .services__item {
+        width: 260px !important;
+        height: 200px !important;
+        display: flex !important;
+        flex-direction: column;
+        gap: 16px;
+        border-radius: 6px;
+        padding: 16px;
+        background: #fff;
+    }
+
+    .services__item {
+        position: relative;
+    }
+
+    .services__button {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+    }
+
+    .burger__header-action-item:nth-child(2) {
+        margin-left: -40px;
+    }
+
+}
+
+
+@media (min-width: 768px) {
+    .main__list-btn {
+        display: flex; /* задаем стиль блочного элемента для кнопки */
+        justify-content: center; /* выравниваем по горизонтали содержимое кнопки */
+        align-items: center; /* выравниваем по вертикали содержимое кнопки */
+    }
+
+    .header__actions li {
+        display: block;
+    }
+
+    .main__actions-desktop li:nth-child(3){
+        display: flex;
+        align-items: center;
+    }
+
+    .header__list-item:nth-child(3){
+        display: flex;
+        align-items: center;
+    }
+
+    .header__list-item:nth-child(3)::after{
+        content: url("../assets/images/header/divider.svg");
+        padding-left: 16px;
+    }
+
+    .about {
+        display: flex;
+        gap: 30px;
+    }
+
+    .main__content-paragraph--hidden:nth-child(1) {
+        display: inline;
+    }
+
+    .main-about__image {
+        margin: 0;
+    }
+
+    .main__about-photo {
+        margin: 0;
+        border-radius: 10px;
+        width: 100%;
+        height: auto;
+        position: static;
+    }
+
+    .brands {
+        width: 100%;
+    }
+
+    .brands__list {
+        list-style: none;
+        display: grid;
+        gap: 16px;
+        height: 162px;
+        overflow: hidden;
+        transition: height 0.7s ease;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .brands__list-active {
+        height: 336px;
+    }
+
+    .brands__title {
+        position: relative;
+        left: -16px;
+    }
+
+    .brands__item,
+    .repair__item {
+        min-width: 220px;
+        width: auto !important;
+    }
+
+    .brands,
+    .repair {
+        padding-bottom: 10px;
+    }
+
+    .container-brands {
+        justify-content: start;
+    }
+
+    .repair__list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+        height: 160px;
+        overflow: hidden;
+        transition: height 0.7s ease;
+    }
+
+    .repair__btn {
+        width: 100%;
+    }
+
+    .brands__list,
+    .repair__list {
+        margin-top: 16px;
+    }
+
+    .repair__list-active {
+        height: 340px;
+    }
+
+    .services__list {
+        width: 100%;
+        background: #fff;
+        border-radius: 6px;
+        margin-top: 60px;
+    }
+
+    .services__service-name {
+        display: none;
+    }
+
+    .table-services {
+        display: block;
+    }
+
+    .services__item {
+        padding: 23px 16px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .services__item:not(:last-child) {
+        border-bottom: 2px solid #EAEAEA;
+    }
+
+    .services__service-descr {
+        white-space: nowrap;
+    }
+
+
+    .services__service-content {
+        min-width: 355px;
+    }
+
+    .services__service-content,
+    .services__service-price,
+    .services__service-long {
+        position: relative;
+    }
+
+    .services__service-price {
+        min-width: 100px;
+    }
+
+    .services__service-name {
+        position: absolute;
+        top: -65px;
+    }
+
+    .services__service-content {
+        position: relative;
+    }
+
+    .main__description {
+        width: 425px;
+        margin-top: 24px;
+    }
+
+    .main__get-offer {
+        white-space: nowrap;
+    }
+
+    .phone-task__order-label::before {
+        position: relative !important;
+        left: -16px !important;
+    }
+
+    .phone-task__form {
+        position: relative;
+        top: -84px;
+    }
+
+    .phone-task__close {
+        position: relative;
+        left: -80px;
+        top: 3px;
+        z-index: 5;
+    }
+
+    .footer {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 16px 24px;
+    }
+
+    .footer__info,
+    .footer__main-descr,
+    .footer__policy {
+        width: 235px;
+    }
+
+    .footer__info {
+        text-align: right;
+    }
+
+    .footer__main-descr {
+        text-align: left;
+    }
+
+    .services__blur-swiper,
+    .brands__blur-swiper,
+    .repair__blur-swiper {
+        display: none;
+    }
+}
+
+@media (min-width: 1120px) {
+    body {
+        display: flex;
+        justify-content: center;
+    }
+
+    .container {
+        width: 100%;
+    }
+
+    .header {
+        display: none;
+    }
+
+    .main__actions-desktop {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .main__title-container {
+        display: flex;
+        justify-content: space-between;
+    }
+
+
+    .main__list {
+        flex-wrap: wrap;
+    }
+
+    .main__list-btn {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .main__actions-desktop li:nth-child(1) {
+        margin-right: 20px;
+    }
+
+    .main__content-paragraph--hidden:nth-child(2) {
+        display: inline;
+    }
+
+    .brands__list,
+    .repair__list {
+        grid-template-columns: repeat(4, 1fr);
+        justify-content: space-between;
+    }
+
+    .brands__list-active {
+        height: 250px;
+    }
+
+    .brands__item {
+        min-width: 240px;
+    }
+
+    .repair__show-wrapper {
+        display: none;
+    }
+}
+
+@media (min-width: 1440px) {
+    .container {
+        width: calc(100% - 320px);
+        position: absolute;
+        right: 0;
+    }
+
+    .burger {
+        display: block;
+        position: absolute;
+        left: 0;
+        box-shadow: none !important;
+    }
+
+    .blur-menu {
+        display: none;
+    }
+
+    .brands__title,
+    .repair__title,
+    .services__title {
+        color: #7E7E82;
+        background: linear-gradient(to right, #F8F8F8 0%, #FFFFFF 98.61%);
+        width: auto;
+    }
+
+    .burger__close-menu-item {
+        display: none;
+    }
+
+    .phone-task {
+        width: 440px;
+    }
+
+    .blur-phone {
+        right: 440px;
+    }
+
+    .main-about__show-more-btn {
+        margin-top: 20px;
+    }
+
 }

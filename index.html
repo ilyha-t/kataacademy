@@ -27,8 +27,8 @@
         <div class="main__title-container">
             <h1 class="main__title">Услуги и сервисы</h1>
             <ul class="main__actions-desktop" hidden>
-                <li class="main__list-item"><button class="main__list-btn">Оставить заявку<img src="assets/images/header/call.svg" alt="CallIcon" class="main__icon"></button></li>
-                <li class="main__list-item"><button class="main__list-btn">Статус ремонта<img src="assets/images/header/chat.svg" alt="ChatIcon" class="main__icon"></button></li>
+                <li class="main__list-item"><button class="main__list-btn phone-icon">Оставить заявку<img src="assets/images/header/call.svg" alt="CallIcon" class="main__icon"></button></li>
+                <li class="main__list-item main__message-btn"><button class="main__list-btn">Статус ремонта<img src="assets/images/header/chat.svg" alt="ChatIcon" class="main__icon"></button></li>
             </ul>
         </div>
         <nav class="main__navigation">
@@ -57,7 +57,7 @@
                                 и близким.
                             </span>
                 </p>
-                <button class="main-about__show-more-btn">Читать далее</button>
+                <button class="main-about__show-more-btn" onclick="location.href='#brands-section'">Читать далее</button>
             </div>
             <picture class="main-about__image">
                 <source srcset="./assets/images/main/main_photo_1120.jpg" type="image/jpeg" media="(min-width:1120px)">
@@ -67,7 +67,7 @@
             </picture>
         </section>
         <div class="container-brands">
-            <section class="brands">
+            <section class="brands" id="brands-section">
                 <h4 class="brands__title">Ремонт техники различных брендов</h4>
                 <div class="brands__swiper">
                     <ul class="brands__list">
@@ -132,6 +132,7 @@
                             </button>
                         </li>
                     </ul>
+                    <div class="brands__blur-swiper"></div>
                 </div>
                 <button class="brands__show-wrapper">Показать все</button>
             </section>
@@ -166,6 +167,7 @@
                             </button>
                         </li>
                     </ul>
+                    <div class="repair__blur-swiper"></div>
                 </div>
                 <button class="repair__show-wrapper">Показать все</button>
             </section>
@@ -266,6 +268,7 @@
                             </button>
                         </li>
                     </ul>
+                    <div class="services__blur-swiper"></div>
                 </div>
             </section>
         </div>
@@ -293,7 +296,7 @@
     <div class="burger__container">
         <div class="burger__header">
             <ul class="burger__header-actions">
-                <li class="burger__header-action-item">
+                <li class="burger__header-action-item burger__close-menu-item">
                     <button class="burger__header-action-btn burger__close-menu"><img src="assets/images/menu/CloseBurgerIcon.svg" alt="CloseBurgerIcon" class="burger__btn-icon"></button>
                 </li>
                 <li class="burger__header-action-item">
@@ -388,7 +391,7 @@
     <div class="blur blur-phone blur-phone-feedback"></div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-<script src="scripts/script.js"></script>
+<script type="module" src="scripts/script.js"></script>
 <script src="scripts/menu.js"></script>
 </body>
 </html>
