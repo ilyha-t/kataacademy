@@ -187,7 +187,9 @@ button {
 .header__list-btn:focus,
 .main__list-btn:focus,
 .main-about__show-more-btn:focus,
-.main__service-link:focus {
+.brands__btn:focus,
+.repair__btn:focus,
+.main__service-link:focus :focus {
     outline: none; /* убрать стандартный фокус-квадрат */
     box-shadow: 0 0 10px 3px #ff3e79;
 }
@@ -369,6 +371,13 @@ button {
     font-weight: 600;
     text-transform: uppercase;
     padding: 4px;
+}
+
+.services__button:focus,
+.services__button:hover {
+    animation-name: changeOpacity;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
 }
 
 .services__button-img {
@@ -574,7 +583,7 @@ button:focus .burger__btn-icon{
 
 .burger__main-link:hover,
 .burger__main-link:focus,
-.burger__main-link:active{
+.burger__main-link-active {
     background-image: linear-gradient(to right, #ff3e79, #33ccff);
     background-size: 200% auto;
     animation-name: gradient;
@@ -745,7 +754,7 @@ input[type="radio"]:hover + label:not(input[type="radio"]:checked + label) {
     }
 
     to {
-        opacity: 0.5;
+        opacity: 0.6;
     }
 }
 
@@ -925,14 +934,15 @@ input[type="radio"]:hover + label:not(input[type="radio"]:checked + label) {
         list-style: none;
         display: grid;
         gap: 16px;
-        height: 162px;
+        height: 170px;
         overflow: hidden;
         transition: height 0.7s ease;
         grid-template-columns: repeat(3, 1fr);
+        padding: 5px;
     }
 
     .brands__list-active {
-        height: 336px;
+        height: 350px;
     }
 
     .brands__title {
@@ -959,9 +969,10 @@ input[type="radio"]:hover + label:not(input[type="radio"]:checked + label) {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 16px;
-        height: 160px;
+        height: 180px;
         overflow: hidden;
         transition: height 0.7s ease;
+        padding: 5px;
     }
 
     .repair__btn {
@@ -974,7 +985,7 @@ input[type="radio"]:hover + label:not(input[type="radio"]:checked + label) {
     }
 
     .repair__list-active {
-        height: 340px;
+        height: 360px;
     }
 
     .services__list {
@@ -1136,7 +1147,7 @@ input[type="radio"]:hover + label:not(input[type="radio"]:checked + label) {
     }
 
     .brands__list-active {
-        height: 250px;
+        height: 270px;
     }
 
     .brands__item {
@@ -1157,7 +1168,7 @@ input[type="radio"]:hover + label:not(input[type="radio"]:checked + label) {
 
     .burger {
         display: block;
-        position: absolute;
+        position: fixed;
         left: 0;
         box-shadow: none !important;
     }

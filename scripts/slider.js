@@ -13,11 +13,12 @@ class Slider {
     }
 
     init() {
-        const mediaQuery = '(max-width: 768px)';
+        const mediumSize = 768;
+        const mediaQuery = `(max-width: ${mediumSize}px)`;
         const mediaQueryList = window.matchMedia(mediaQuery);
         const pageWidth = window.innerWidth;
 
-        if (pageWidth < 768) {
+        if (pageWidth < mediumSize) {
             this.initMobile();
         } else {
             this.initDesktop();
@@ -26,13 +27,13 @@ class Slider {
         mediaQueryList.addEventListener('change', event => {
             event.matches ? this.initMobile() : this.initDesktop();
         });
-        if (this.showWrapper !== null) {
+        if (this.showWrapper) {
             this.showWrapper.addEventListener('click',()  => this.changeSizeContainer());
         }
     }
 
     initMobile() {
-        if (this.showWrapper !== null) {
+        if (this.showWrapper) {
             this.showWrapper.classList.add('brands__show-wrapper--hidden');
         }
         this.wrapper.classList.add('swiper');
@@ -52,7 +53,7 @@ class Slider {
     }
 
     initDesktop() {
-        if (this.showWrapper !== null) {
+        if (this.showWrapper) {
             this.showWrapper.classList.remove('brands__show-wrapper--hidden');
         }
         this.pagination.classList.add('brands__show-wrapper--hidden');
