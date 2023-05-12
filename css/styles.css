@@ -189,7 +189,7 @@ button {
 .main-about__show-more-btn:focus,
 .brands__btn:focus,
 .repair__btn:focus,
-.main__service-link:focus :focus {
+.main__service-link:focus {
     outline: none; /* убрать стандартный фокус-квадрат */
     box-shadow: 0 0 10px 3px #ff3e79;
 }
